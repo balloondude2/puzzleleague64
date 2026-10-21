@@ -503,14 +503,14 @@ void UpdateMT(tetWell *well, cursor_t *cursor, ai_t *brain) {
                         gMain = GMAIN_TITLE;
                         gReset = -1;
                         gDemo = GDEMO_21;
-                        GAME_STATUS_SHIFT_RIGHT(gGameStatus);
+                        QuitMimic();
                         FadeOutSong(last_song_handle, 0x3C);
                         return;
                     }
                     if (gSelection == SELECTION_64) {
                         gMain = GMAIN_2BC;
                         gReset = -1;
-                        GAME_STATUS_SHIFT_RIGHT(gGameStatus);
+                        QuitMimic();
                         return;
                     }
                     break;
@@ -1477,7 +1477,7 @@ void DoMimic(void) {
     if (var_s5 != 0) {
         gMain = GMAIN_2BC;
         gReset = -1;
-        GAME_STATUS_SHIFT_RIGHT(gGameStatus);
+        QuitMimic();
         PlaySE(SFX_INIT_TABLE, SFX_006);
     }
     mimicTickText((eMode == MM_NONE) && (sp20.unk_0 == 0x20) ? -1 : 0);
